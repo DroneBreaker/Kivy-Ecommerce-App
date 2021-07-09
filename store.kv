@@ -1,0 +1,183 @@
+#:kivy 1.0.9
+
+
+<WindowScreen>:
+    HomePage:
+    DeliveryPage:
+
+
+<HomePage>:
+    padding: '20dp'
+    name: 'home'
+    # MDBoxLayout:
+    #     orientation: 'vertical'
+    #     icon_left: 'person'
+    #     pos_hint: {'center_x': .5, 'center_y': .95}
+    #     MDToolbar:
+    #         icon_left: 'person'
+    #         title: 'Current Location'  
+
+    FitImage
+        source: 'assets/images/home.jpg'
+        allow_stretch: True
+
+    StackLayout
+        spacing: '25dp'
+        padding: '10dp'
+        MDIconButton
+            icon: 'account-circle'
+            pos_hint: {'x': .75, 'center_y': .5}
+            size_hint: None, None
+            user_font_size: '30sp'
+
+        MDTextButton
+            text: 'Current Location'
+            size_hint: None, .1
+
+        MDIconButton
+            icon: 'gift'
+            pos_hint: {'center_x': .5, 'center_y': .5}
+            size_hint: None, None
+            user_font_size: '30sp'
+
+    MDTextFieldRound:
+        id: search
+        icon_left: 'search-web'
+        hint_text: 'What can we get you?'
+        pos_hint: {'center_x': .5, 'y': .85}
+        size_hint: None, None
+        multiline: False
+        on_text_validate: True
+        width: '240dp'
+        normal_color: (46/255, 49/255, 49/255, 1)
+
+    MDIconButton
+        id: float_root
+        icon: 'star-shooting'
+        user_font_size: '54sp'
+        size_hint: None, None
+        text: 'Anything'
+        size: (70, 70)
+        bg_color: (46/255, 49/255, 49/255, 1)
+        pos_hint: {'x': .4, 'y': .4}
+        on_release: root.manager.current = 'anything'
+        canvas.before:
+            Color:
+                rgba: float_root.bg_color
+            Ellipse:
+                size: self.size
+                pos: self.pos
+
+    MDIconButton
+        id: float_root
+        icon: 'food'
+        user_font_size: '44sp'
+        size_hint: None, None
+        text: 'Restaurants'
+        size: (60, 60)
+        bg_color: (46/255, 49/255, 49/255, 1)
+        pos_hint: {'x': .42, 'y': .55}
+        on_release: root.manager.current = 'restaurant'
+        canvas.before:
+            Color:
+                rgba: float_root.bg_color
+            Ellipse:
+                size: self.size
+                pos: self.pos
+
+    MDIconButton
+        id: float_root
+        icon: 'water-polo'
+        user_font_size: '44sp'
+        size_hint: None, None
+        text: 'Drinks'
+        size: (60, 60)
+        bg_color: (46/255, 49/255, 49/255, 1)
+        pos_hint: {'x': .63, 'y': .35}
+        on_release: root.manager.current = 'drinks'
+        canvas.before:
+            Color:
+                rgba: float_root.bg_color
+            Ellipse:
+                size: self.size
+                pos: self.pos
+
+    MDIconButton
+        id: float_root
+        icon: 'cart-variant'
+        user_font_size: '44sp'
+        size_hint: None, None
+        text: 'Supermarket'
+        size: (60, 60)
+        bg_color: (46/255, 49/255, 49/255, 1)
+        pos_hint: {'x': .63, 'y': .49}
+        on_release: root.manager.current = 'supermarket'
+        canvas.before:
+            Color:
+                rgba: float_root.bg_color
+            Ellipse:
+                size: self.size
+                pos: self.pos
+
+    MDIconButton
+        id: float_root
+        size_hint: None, None
+        icon: 'label-percent'
+        user_font_size: '44sp'
+        text: 'Promotions'
+        size: (60, 60)
+        bg_color: (46/255, 49/255, 49/255, 1)
+        pos_hint: {'x': .21, 'y': .49}
+        on_release: root.manager.current = 'promo'
+        canvas.before:
+            Color:
+                rgba: float_root.bg_color
+            Ellipse:
+                size: self.size
+                pos: self.pos
+
+    MDIconButton
+        disabled: True
+        id: float_root
+        icon: 'pharmacy'
+        user_font_size: '44sp'
+        size_hint: None, None
+        text: 'Pharmacy'
+        size: (60, 60)
+        bg_color: (46/255, 49/255, 49/255, 1)
+        pos_hint: {'x': .19, 'y': .35}
+        on_release: root.manager.current = 'pharmacy'
+        canvas.before:
+            Color:
+                rgba: float_root.bg_color
+            Ellipse:
+                size: self.size
+                pos: self.pos
+
+    MDIconButton
+        id: float_root
+        icon: 'package'
+        user_font_size: '44sp'
+        size_hint: None, None
+        text: 'Welcome to Droners'
+        size: (60, 60)
+        bg_color: (46/255, 49/255, 49/255, 1)
+        pos_hint: {'x': .42, 'y': .27}
+        on_release: root.manager.current = 'delivery'
+        canvas.before:
+            Color:
+                rgba: float_root.bg_color
+            Ellipse:
+                size: self.size
+                pos: self.pos
+
+    # RelativeLayout
+    #     canvas:
+    #         Line: points(0, 100, 100, 0)
+
+    # MDFloatLayout:
+    #     size_hint: None, None
+
+    #     Button
+    #         text: 'Auth'
+    #         on_release: root.manager.current = 'auth'

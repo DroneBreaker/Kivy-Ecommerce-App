@@ -1,0 +1,145 @@
+#:kivy 1.0.9
+
+<WindowScreen>:
+    Restaurant:
+
+
+<Restaurant>:
+    name: 'restaurant'
+    # FitImage
+    #     source: 'assets/images/chicken.jpg'
+    #     allow_stretch: True
+
+    StackLayout
+        spacing: '30dp'
+        padding: '5dp'
+        MDIconButton
+            icon: 'arrow-left'
+            pos_hint: {'center_y': .5}
+            size_hint: None, None
+            user_font_size: '30sp'
+            on_release: root.manager.current = 'home'
+
+        MDTextButton
+            text: 'Restaurants'
+            pos_hint: {'center_x': .5, 'center_y': .5}
+            size_hint: None, .09
+            font_size: '22dp'
+            on_release: root.manager.current = 'restaurant'
+
+        MDIconButton
+            icon: 'google-maps'
+            size_hint: None, None
+            user_font_size: '30sp'
+
+    MDTextFieldRound
+        icon_left: 'search-web'
+        hint_text: 'Place or product'
+        pos_hint: {'center_x': .5, 'y': .85}
+        size_hint: None, None
+        width: '240dp'
+        normal_color: (46/255, 49/255, 49/255, 1)
+        on_text_validate: True
+
+    MDIconButton
+        icon: 'dots-grid'
+        size_hint: None, None
+        user_font_size: '30sp'
+        pos_hint: {'x': .05, 'y': .76}
+
+    MDIconButton
+        icon: 'chili-hot'
+        size_hint: None, None
+        user_font_size: '30sp'
+        pos_hint: {'x': .2, 'y': .76}
+
+    MDIconButton
+        icon: 'cart'
+        size_hint: None, None
+        user_font_size: '30sp'
+        pos_hint: {'x': .35, 'y': .76}
+
+    MDIconButton
+        icon: 'cart'
+        size_hint: None, None
+        user_font_size: '30sp'
+        pos_hint: {'x': .5, 'y': .76}
+
+    MDIconButton
+        icon: 'cart'
+        size_hint: None, None
+        user_font_size: '30sp'
+        pos_hint: {'x': .65, 'y': .76}
+
+    MDIconButton
+        icon: 'cart'
+        size_hint: None, None
+        user_font_size: '30sp'
+        pos_hint: {'x': .8, 'y': .76}
+
+    MDIconButton
+        icon: 'cart'
+        size_hint: None, None
+        user_font_size: '30sp'
+        pos_hint: {'x': 1, 'y': .76}
+
+    RelativeLayout
+        MDIconButton
+            icon: 'label-percent'
+            size_hint: None, None
+            user_font_size: '30sp'
+            pos_hint: {'x': .03, 'y': .68}
+
+        MDTextButton
+            text: 'Promotions'
+            size_hint: None, .09
+            pos_hint: {'center_x': .35, 'y': .68}
+
+        MDIconButton
+            icon: 'arrow-right'
+            size_hint: None, None
+            user_font_size: '30sp'
+            pos_hint: {'x': .85, 'y': .68}
+
+
+    # RelativeLayout
+    #     orientation: 'vertical'
+    MDCard
+        size_hint: None, None
+        pos_hint: {'center_x': .5, 'center_y': .55}
+        size: '260dp', '160dp'
+        orientation: 'vertical'
+        ripple_behavior: True
+
+        FitImage
+            source: 'assets/images/chicken.jpg'
+            allow_stretch: True
+            keep_ratio: False
+
+        # MDSeparator
+        #     height: '1dp'
+
+        # MDLabel:
+        #     text: 'First Card\nSay Hello'
+        #      # font_style: 'H6'
+        #     size_hint_y: None
+        #     height: self.texture_size[1]
+
+    MDCard
+        size_hint: None, None
+        pos_hint: {'x': .97, 'center_y': .55}
+        size: '260dp', '160dp'
+        ripple_behavior: True
+
+        FitImage
+            source: 'assets/images/chicken.jpg'
+            allow_stretch: True
+            keep_ratio: False
+
+            # MDSeparator
+            #     height: '1dp'
+
+        # MDLabel:
+        #     text: 'Second Card'
+        #     size_hint_y: None
+        #     height: self.texture_size[1]

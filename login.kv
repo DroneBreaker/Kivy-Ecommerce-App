@@ -1,0 +1,94 @@
+#:kivy 1.0.9
+
+<WindowScreen>:
+    LoginPage:
+
+
+<LoginPage>:
+    name: 'login'
+    on_enter:
+        root.anim(back)
+        root.anim_draw(back1)
+        root.icons(icon)
+        root.text(label)
+    MDFloatLayout
+        FitImage
+            source: 'assets/images/home.jpg'
+            allow_stretch: True
+        MDFloatLayout
+            id: back
+            size_hint_y: .6
+            pos_hint: {'center_y': 1.8}
+            radius: [0, 0, 0, 40]
+            canvas:
+                Color:
+                    rgb: (1, 1 , 0, .3)
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+
+        MDFloatLayout
+            id: back1
+            size_hint_y: .6
+            pos_hint: {'center_y': 1.8}
+            radius: [0, 0, 0, 40]
+            canvas:
+                Color:
+                    rgb: (1, 1, 0, 0.3)
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+
+        MDIconButton
+            id: icon
+            icon: 'account-circle'
+            pos_hint: {'center_x': .5, 'center_y': .8}
+            user_font_size: '60sp'
+            text_color: 1, 1, 1, 1
+
+        MDLabel
+            id: label
+            text: 'Login Page'
+            markup: True
+            pos_hint: {'center_y': .75}
+            halign: 'center'
+            text_color: 0, 0, 0, 0
+            font_style: 'H5'
+            opacity: 0
+
+        MDTextFieldRound
+            id: uname
+            hint_text: 'Enter your username'
+            icon_right: 'account'
+            size_hint_x: .8
+            pos_hint: {'center_x': .5, 'center_y': .46}
+            multiline: False
+            focus: True
+            on_text_validate: pwdController.focus = True
+
+        MDTextFieldRound
+            id: pwdController
+            hint_text: 'Enter your password'
+            icon_right: 'eye-off'
+            size_hint_x: .8
+            pos_hint: {'center_x': .5, 'center_y': .38}
+            password: True
+            on_text_validate: root.validate_user()
+
+        MDRaisedButton
+            text: 'Login'
+            pos_hint: {'center_x': .5, 'center_y': .3}
+            on_release: root.manager.current = 'home'
+            # size_hint_x: .5
+
+        MDTextButton
+            text: 'Did you forget your password?'
+            pos_hint: {'center_x': .53, 'center_y': .22}
+            custom_color: 1, 0, 0, 1
+            # on_press: root.manager.current = 'signup'
+
+        MDTextButton
+            text: "Don't have an account yet? Signup"
+            pos_hint: {'center_x': .53, 'center_y': .17}
+            custom_color: 1, 0, 0, 1
+            on_press: root.manager.current = 'signup'

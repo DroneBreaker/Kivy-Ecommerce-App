@@ -1,0 +1,100 @@
+<WindowScreen>:
+    SignUp:
+
+
+<SignUp>:
+    name: 'signup'
+    on_enter:
+        root.anim(back)
+        root.anim_draw(back1)
+        root.icons(icon)
+        root.text(label)
+    MDFloatLayout
+        FitImage
+            source: 'assets/images/home.jpg'
+            allow_stretch: True
+        MDFloatLayout
+            id: back
+            size_hint_y: .6
+            pos_hint: {'center_y': 1.8}
+            radius: [0, 40, 0, 40]
+            canvas:
+                Color:
+                    rgb: (.5, 0 , 1, 1)
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+
+        MDFloatLayout
+            id: back1
+            size_hint_y: .6
+            pos_hint: {'center_y': 1.8}
+            radius: [0, 40, 0, 40]
+            canvas:
+                Color:
+                    rgb: (.5, 0 , 1, .5)
+
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+
+        MDIconButton
+            id: icon
+            icon: 'account-circle'
+            pos_hint: {'center_x': .5, 'center_y': .8}
+            user_font_size: '60sp'
+            text_color: 1, 1, 1, 1
+
+        MDLabel
+            id: label
+            text: 'SignUp Page'
+            markup: True
+            pos_hint: {'center_y': .7}
+            halign: 'center'
+            text_color: 1, 1, 1, 1
+            font_style: 'H5'
+            opacity: 0
+
+        MDTextFieldRound
+            hint_text: 'First Name'
+            icon_right: 'account'
+            size_hint_x: .8
+            pos_hint: {'center_x': .5, 'center_y': .46}
+
+        MDTextFieldRound
+            hint_text: 'Last Name'
+            icon_right: 'account'
+            size_hint_x: .8
+            pos_hint: {'center_x': .5, 'center_y': .4}
+
+        MDTextFieldRound
+            hint_text: 'Enter your email'
+            icon_right: 'email'
+            size_hint_x: .8
+            pos_hint: {'center_x': .5, 'center_y': .34}
+
+        MDTextFieldRound
+            hint_text: 'Enter your password'
+            icon_right: 'eye-off'
+            size_hint_x: .8
+            pos_hint: {'center_x': .5, 'center_y': .28}
+            password: True
+
+        MDTextFieldRound
+            hint_text: 'Confirm password'
+            icon_right: 'eye-off'
+            size_hint_x: .8
+            pos_hint: {'center_x': .5, 'center_y': .22}
+            password: True
+
+        MDRaisedButton
+            text: 'Signup'
+            pos_hint: {'center_x': .5, 'center_y': .14}
+            on_release: root.manager.current = 'home'
+            # size_hint_x: .5
+
+        MDTextButton
+            text: 'Already have an account? Login'
+            pos_hint: {'center_x': .53, 'center_y': .08}
+            custom_color: 1, 0, 0, 1
+            on_press: root.manager.current = 'login'
